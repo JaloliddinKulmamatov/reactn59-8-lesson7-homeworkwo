@@ -1,0 +1,25 @@
+/* styles.css */
+@keyframes l15 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.loader {
+    @apply w-12 aspect-square grid border-4 border-transparent rounded-full;
+    border-right-color: #25b09b;
+    animation: l15 1s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    grid-area: 1/1;
+    @apply m-0 border-4 border-transparent rounded-full;
+    animation: l15 2s infinite;
+}
+
+.loader::after {
+    @apply m-2;
+    animation-duration: 3s;
+}
